@@ -16,7 +16,7 @@ public class AuthorMapper implements DtoMapper<Author, AuthorDto> {
                 .age(dto.getAge())
                 .gender(Gender.valueOf(dto.getGender()))
                 .email(dto.getEmail())
-                .city(dto.getCity())
+                .address(dto.getAddress())
                 .createdAt(dto.getCreatedAt())
                 .build();
     }
@@ -30,7 +30,7 @@ public class AuthorMapper implements DtoMapper<Author, AuthorDto> {
                 .age(entity.getAge())
                 .gender(String.valueOf(entity.getGender()))
                 .email(entity.getEmail())
-                .city(entity.getCity())
+                .address(entity.getAddress())
                 .createdAt(entity.getCreatedAt())
                 .build();
     }

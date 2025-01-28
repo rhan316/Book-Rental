@@ -21,6 +21,10 @@ public class Book {
 	private String isbn;
 
 	@ManyToOne
+	@JoinColumn(name = "user_id")
+	private User borrower;
+
+	@ManyToOne
 	@JoinColumn(name = "publisher_id", nullable = false)
 	@JsonBackReference
 	private Publisher publisher;

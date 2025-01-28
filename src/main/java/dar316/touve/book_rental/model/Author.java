@@ -33,7 +33,7 @@ public class Author {
 
 	@Column(unique = true)
 	private String email;
-	private String city;
+	private String address;
 
 	@Column(nullable = false, updatable = false)
 	@CreationTimestamp

@@ -34,13 +34,13 @@ public class AuthorDto {
     private final String gender;
 
     @NotBlank(message = "Email cannot be blank")
-    @Pattern(regexp = "^.+@.+\\..+", message = "Invalid e-mail format"
-    )
+    @Pattern(regexp = "^.+@.+\\..+", message = "Invalid e-mail format")
+    @Email
     private final String email;
 
     @NotBlank
     @Size(min = 2, max = 50, message = "City name must be between 2 and 50 characters")
-    private final String city;
+    private final String address;
 
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
