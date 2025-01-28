@@ -45,8 +45,10 @@ public class BookService {
 		return fetchAllBooksStream()
 				.map(book -> new BookDto(
 						book.getTitle(),
+						book.getIsbn(),
 						book.getAuthor().getFullName(),
-						book.getPublisher().getName()
+						book.getPublisher().getName(),
+						book.getReleaseDate()
 				)).collect(Collectors.toList());
 	}
 
@@ -87,8 +89,10 @@ public class BookService {
 
 		var book = Book.builder()
 				.title(bookDto.getTitle())
+				.isbn(bookDto.getIsbn())
 				.author(author)
 				.publisher(publisher)
+				.releaseDate(bookDto.getReleaseDate())
 				.build();
 
 		return Optional.of(bookRepository.save(book));

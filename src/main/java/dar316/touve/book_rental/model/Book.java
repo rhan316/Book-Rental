@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDate;
 import java.util.UUID;
 
 @Builder
@@ -17,6 +18,7 @@ public class Book {
 	@GeneratedValue(strategy = GenerationType.UUID)
 	private UUID id;
 	private String title;
+	private String isbn;
 
 	@ManyToOne
 	@JoinColumn(name = "publisher_id", nullable = false)
@@ -26,4 +28,6 @@ public class Book {
 	@ManyToOne
 	@JoinColumn(name = "author_id", nullable = false)
 	private Author author;
+
+	private LocalDate releaseDate;
 }
